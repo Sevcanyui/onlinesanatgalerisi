@@ -1,0 +1,308 @@
+/* styles.css - Soft Gothic Mist Edition */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap');
+
+:root {
+  --primary: #7effb2;       /* Parlak yeşil */
+  --primary-soft: #a3ffd4;  /* Yumuşak açık yeşil */
+  --bg-lightgreen: #0e1f16; /* Yeşil-sisli arka plan */
+  --bg-card: #152a22;       /* Kart rengi: koyu zümrüt */
+  --text-main: #d8ffe9;     /* Yazılar: açık mint */
+  --text-muted: #8edfb5;
+  --shadow: rgba(150, 255, 200, 0.3);
+}
+
+/* Genel yapı */
+* {
+  box-sizing: border-box;
+  transition: all 0.25s ease-in-out;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #123221, #0e1f16, #0a1710 85%);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  letter-spacing: 0.3px;
+  scroll-behavior: smooth;
+  animation: mistMove 12s ease-in-out infinite alternate;
+}
+
+/* Sisli yavaş hareket efekti */
+@keyframes mistMove {
+  from {
+    background-position: 0% 0%;
+    filter: brightness(1);
+  }
+  to {
+    background-position: 100% 100%;
+    filter: brightness(1.1);
+  }
+}
+
+/* Fade-in animasyonu */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #163c2b, #1b4433);
+  padding: 18px 32px;
+  border-bottom: 1px solid rgba(180,255,200,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 14px var(--shadow);
+  animation: fadeIn 1s ease;
+}
+header h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(100,255,180,0.5);
+}
+header nav a {
+  color: var(--text-main);
+  margin-left: 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+header nav a:hover {
+  color: var(--primary-soft);
+  text-shadow: 0 0 8px rgba(150,255,200,0.8);
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  animation: fadeIn 1s ease;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin-top: 40px;
+}
+
+/* Kartlar */
+.art-card {
+  background: var(--bg-card);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(200,255,200,0.08);
+  box-shadow: 0 0 20px rgba(150,255,200,0.08);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.art-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(150,255,200,0.25);
+}
+.art-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.05);
+  transition: filter .4s ease;
+}
+.art-card:hover img {
+  filter: brightness(1.15) contrast(1.2);
+}
+.art-card .body {
+  padding: 14px;
+}
+.art-card h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 6px;
+  color: var(--primary-soft);
+  font-size: 1.2rem;
+}
+.art-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Form */
+.form-container {
+  background: rgba(20,40,30,0.9);
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 480px;
+  margin: 60px auto;
+  border: 1px solid rgba(180,255,200,0.1);
+  box-shadow: 0 0 15px rgba(150,255,200,0.15);
+  animation: fadeIn 1s ease;
+}
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--primary-soft);
+}
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(150,255,200,0.15);
+  border-radius: 6px;
+  background: rgba(10,25,15,0.9);
+  color: var(--text-main);
+  font-family: 'Poppins', sans-serif;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-soft);
+  box-shadow: 0 0 12px rgba(150,255,200,0.4);
+}
+
+/* Buton */
+button, .btn {
+  background: linear-gradient(90deg, #00b47a, #78ffc4);
+  border: none;
+  color: #092b1c;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(100,255,200,0.3);
+  transition: transform .2s ease, box-shadow .3s ease;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(100,255,200,0.6);
+}
+
+/* Tablo */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  background: rgba(20,40,30,0.85);
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(150,255,200,0.06);
+  font-size: 0.9rem;
+}
+th {
+  color: var(--primary);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  background: rgba(50,100,70,0.2);
+}
+tr:hover td {
+  background: rgba(100,255,180,0.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 60px;
+  border-top: 1px solid rgba(150,255,200,0.08);
+}
+/* Galeri düzeni */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* Kart */
+.art-card {
+    background: #153328;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Kare görsel alanı */
+.art-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* 👈 KARE */
+    object-fit: cover;     /* 👈 Taşanı kırp */
+    display: block;
+}
+
+/* Kart içi yazılar */
+.art-card h3,
+.art-card p {
+    padding: 10px 15px;
+}
+
+/* ===== ARTWORK DETAIL PAGE ===== */
+
+.art-detail {
+    padding: 60px 20px;
+}
+
+/* ANA KUTU */
+.art-detail-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* SOL – FOTOĞRAF */
+.art-detail-image {
+    flex: 0 0 45%;
+}
+
+.art-detail-image img {
+    width: 100%;
+    max-height: 420px;       /* 👈 ORTA BOY */
+    object-fit: contain;    /* 👈 ORANTI BOZULMAZ */
+    background: #0c1f17;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(150,255,200,0.25);
+}
+
+/* SAĞ – YAZILAR */
+.art-detail-info {
+    flex: 1;
+}
+
+.art-detail-info h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    margin-top: 0;
+    text-shadow: 0 0 12px rgba(150,255,200,0.5);
+}
+
+.art-detail-info p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+/* MOBİL UYUMLU */
+@media (max-width: 900px) {
+    .art-detail-container {
+        flex-direction: column;
+    }
+
+    .art-detail-image img {
+        max-height: 300px;
+    }
+}
+
+

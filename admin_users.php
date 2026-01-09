@@ -8,7 +8,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     exit;
 }
 
-/* Kullanıcıları çek */
+
 $users = $pdo->query("SELECT id, username, role FROM users")->fetchAll();
 ?>
 
@@ -39,3 +39,4 @@ $users = $pdo->query("SELECT id, username, role FROM users")->fetchAll();
 
 </body>
 </html>
+

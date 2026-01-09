@@ -1,19 +1,18 @@
-/* styles.css - Soft Gothic Mist Edition */
+/* styles.css
 
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap');
 
 :root {
-  --primary: #7effb2;       /* Parlak yeşil */
-  --primary-soft: #a3ffd4;  /* Yumuşak açık yeşil */
-  --bg-lightgreen: #0e1f16; /* Yeşil-sisli arka plan */
-  --bg-card: #152a22;       /* Kart rengi: koyu zümrüt */
-  --text-main: #d8ffe9;     /* Yazılar: açık mint */
+  --primary: #7effb2;       
+  --primary-soft: #a3ffd4;  
+  --bg-lightgreen: #0e1f16; 
+  --bg-card: #152a22;      
+  --text-main: #d8ffe9;    
   --text-muted: #8edfb5;
   --shadow: rgba(150, 255, 200, 0.3);
 }
 
-/* Genel yapı */
 * {
   box-sizing: border-box;
   transition: all 0.25s ease-in-out;
@@ -31,7 +30,7 @@ body {
   animation: mistMove 12s ease-in-out infinite alternate;
 }
 
-/* Sisli yavaş hareket efekti */
+
 @keyframes mistMove {
   from {
     background-position: 0% 0%;
@@ -43,13 +42,13 @@ body {
   }
 }
 
-/* Fade-in animasyonu */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Header */
+
 header {
   background: linear-gradient(90deg, #163c2b, #1b4433);
   padding: 18px 32px;
@@ -78,7 +77,7 @@ header nav a:hover {
   text-shadow: 0 0 8px rgba(150,255,200,0.8);
 }
 
-/* Container */
+
 .container {
   max-width: 1100px;
   margin: 40px auto;
@@ -86,7 +85,7 @@ header nav a:hover {
   animation: fadeIn 1s ease;
 }
 
-/* Gallery */
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -94,7 +93,6 @@ header nav a:hover {
   margin-top: 40px;
 }
 
-/* Kartlar */
 .art-card {
   background: var(--bg-card);
   border-radius: 14px;
@@ -131,7 +129,7 @@ header nav a:hover {
   color: var(--text-muted);
 }
 
-/* Form */
+
 .form-container {
   background: rgba(20,40,30,0.9);
   border-radius: 10px;
@@ -164,7 +162,7 @@ input:focus, textarea:focus {
   box-shadow: 0 0 12px rgba(150,255,200,0.4);
 }
 
-/* Buton */
+
 button, .btn {
   background: linear-gradient(90deg, #00b47a, #78ffc4);
   border: none;
@@ -183,7 +181,6 @@ button:hover {
   box-shadow: 0 0 25px rgba(100,255,200,0.6);
 }
 
-/* Tablo */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -208,7 +205,7 @@ tr:hover td {
   background: rgba(100,255,180,0.05);
 }
 
-/* Footer */
+
 footer {
   text-align: center;
   padding: 20px;
@@ -217,14 +214,14 @@ footer {
   margin-top: 60px;
   border-top: 1px solid rgba(150,255,200,0.08);
 }
-/* Galeri düzeni */
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 25px;
 }
 
-/* Kart */
+
 .art-card {
     background: #153328;
     border-radius: 16px;
@@ -232,27 +229,27 @@ footer {
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* Kare görsel alanı */
+
 .art-card img {
     width: 100%;
-    aspect-ratio: 1 / 1;   /* 👈 KARE */
-    object-fit: cover;     /* 👈 Taşanı kırp */
+    aspect-ratio: 1 / 1;   
+    object-fit: cover;     
     display: block;
 }
 
-/* Kart içi yazılar */
+
 .art-card h3,
 .art-card p {
     padding: 10px 15px;
 }
 
-/* ===== ARTWORK DETAIL PAGE ===== */
+
 
 .art-detail {
     padding: 60px 20px;
 }
 
-/* ANA KUTU */
+
 .art-detail-container {
     max-width: 1100px;
     margin: auto;
@@ -261,21 +258,21 @@ footer {
     align-items: flex-start;
 }
 
-/* SOL – FOTOĞRAF */
+
 .art-detail-image {
     flex: 0 0 45%;
 }
 
 .art-detail-image img {
     width: 100%;
-    max-height: 420px;       /* 👈 ORTA BOY */
-    object-fit: contain;    /* 👈 ORANTI BOZULMAZ */
+    max-height: 420px;       
+    object-fit: contain;    
     background: #0c1f17;
     border-radius: 14px;
     box-shadow: 0 0 25px rgba(150,255,200,0.25);
 }
 
-/* SAĞ – YAZILAR */
+
 .art-detail-info {
     flex: 1;
 }
@@ -294,7 +291,6 @@ footer {
     margin-bottom: 12px;
 }
 
-/* MOBİL UYUMLU */
 @media (max-width: 900px) {
     .art-detail-container {
         flex-direction: column;
@@ -304,5 +300,6 @@ footer {
         max-height: 300px;
     }
 }
+
 
 

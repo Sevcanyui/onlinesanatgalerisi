@@ -15,11 +15,11 @@ $artwork = $stmt->fetch();
 
 if ($artwork) {
 
-    // ✔ RED YAP (approved değil!)
+
     $pdo->prepare("UPDATE artworks SET status = 'rejected' WHERE id = ?")
         ->execute([$artworkId]);
 
-    // ✔ Bildirim düş
+
     $pdo->prepare(
         "INSERT INTO notifications (user_id, message)
          VALUES (?, ?)"
@@ -31,3 +31,4 @@ if ($artwork) {
 
 header("Location: admin_dashboard.php");
 exit;
+

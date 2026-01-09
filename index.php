@@ -43,14 +43,14 @@ $artworks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($artworks as $art): ?>
             <div class="art-card">
 
-<!-- SADECE RESİM TIKLANABİLİR -->
+
 <a href="artwork.php?id=<?= $art['id'] ?>" class="image-link">
     <div class="image-box">
         <img src="uploads/<?= htmlspecialchars($art['image']) ?>" alt="">
     </div>
 </a>
 
-                <!-- BAŞLIK TIKLANMAZ -->
+         
                 <h3><?= htmlspecialchars($art['title']) ?></h3>
 
                 <p><b>Sanatçı:</b> <?= htmlspecialchars($art['artist']) ?></p>
@@ -61,3 +61,4 @@ $artworks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </main>
 </body>
 </html>
+

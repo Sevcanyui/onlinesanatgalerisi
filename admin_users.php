@@ -2,7 +2,7 @@
 include 'db_connect.php';
 session_start();
 
-/* Admin değilse içeri alma */
+
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     header("Location: index.php");
     exit;
@@ -39,4 +39,5 @@ $users = $pdo->query("SELECT id, username, role FROM users")->fetchAll();
 
 </body>
 </html>
+
 

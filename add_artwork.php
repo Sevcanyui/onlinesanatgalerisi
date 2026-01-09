@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $_POST['description'];
     $tags = $_POST['tags'] ?? null;
 
-    // Görsel yükleme
+ 
     $image = '';
     if (!empty($_FILES['image']['name'])) {
         $image = time() . '_' . $_FILES['image']['name'];
@@ -108,3 +108,4 @@ document.getElementById('imageInput').onchange = function (e) {
 
 </body>
 </html>
+
